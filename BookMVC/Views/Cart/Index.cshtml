@@ -1,0 +1,25 @@
+﻿@model BookMVC.Models.Cart
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- TODO: Hiển thị thông tin giỏ hàng ở đây -->
+<h2>Giỏ hàng</h2>
+@if (Model != null)
+{
+    <ul>
+        @foreach (var item in Model.CartDetails)
+        {
+            <li>
+                @item.Product.Name - Quantity: @item.Quantity
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Giỏ hàng trống.</p>
+}
+
